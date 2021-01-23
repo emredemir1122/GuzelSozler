@@ -105,32 +105,44 @@ app.route("/api/guzelsoz/:id")
     });
 
 
-app.get("/admin",function(req,res){
-var link ="https://emre-guzelsozler.herokuapp.com/api/guzelsozler";
-
-https.get(link , function(response){
-     response.on("data", function(gelenGuzelSozler){
-       // gelenGuzelSozler -> byte türünde gelmişti.
-       var guzelSozler = JSON.parse(gelenGuzelSozler);
-       res.render("admin",{ sozler:guzelSozler});
-     })
-   });
-
-});
-
-
-app.post("/kayıt-sil",function(req,res){
-
-  var id =req.body._id;
-
-
-
-
-  res.send(id);
-
-
-
-})
+// app.get("/admin",function(req,res){
+// var link ="https://emre-guzelsozler.herokuapp.com/api/guzelsozler";
+//
+// https.get(link , function(response){
+//      response.on("data", function(gelenGuzelSozler){
+//        // gelenGuzelSozler -> byte türünde gelmişti.
+//        var guzelSozler = JSON.parse(gelenGuzelSozler);
+//        res.render("admin",{ sozler:guzelSozler});
+//      })
+//    });
+//
+// });
+//
+//
+// app.post("/kayıt-sil",function(req,res){
+//
+//   var id =req.body._id;
+//
+// var link="https://emre-guzelsozler.herokuapp.com/api/guzelsoz"+id;
+//
+// var gonderilecekler=JSON.stringify(
+//   {
+//    sifre:"parola1234"
+//
+//   }
+//
+// )
+//
+// var secenekler = {
+//     method : 'DELETE'
+//   };
+//   https.get(link, secenekler , function(response){
+//       response.on("data", function(gelenData){
+//         var sonuc = JSON.parse(gelenData);
+//         res.send(sonuc)
+//       })
+//   });
+// })
 
         let port = process.env.PORT;
         if(port == "" || port == null){

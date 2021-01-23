@@ -134,7 +134,11 @@ app.route("/api/guzelsoz/:id")
 // )
 //
 // var secenekler = {
-//     method : 'DELETE'
+//     method : 'DELETE',
+//     headers:{
+//       'Content-Type':'application/json',
+//       'Content-length':gonderilecekler.length
+//     }
 //   };
 //   https.get(link, secenekler , function(response){
 //       response.on("data", function(gelenData){
